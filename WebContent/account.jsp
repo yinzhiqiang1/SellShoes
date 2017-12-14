@@ -345,7 +345,7 @@ function check() {
 </script>		
 <!-- 注册表单 -->
 
-				<form action="SellShoes/usercontroller/checkemail" method="post">
+				<form action="/SellShoes/usercontroller/register" method="post">
 					<div class="account-top heading">
 						<h3>REGISTERED CUSTOMERS</h3>
 					</div>
@@ -365,13 +365,17 @@ function check() {
 						<span>PasswordDemo</span>
 						<input type="password" name="psw1"  id="psw1" onblur="check()"/><span id="yzq"></span>
 					</div>
+					<div class="address">
+						<span>Picture</span>
+					   <input type="file" name="photo" />
+					</div>
 					<div class="address new">
 						<input type="submit" value="submit">
 					</div>
 					</form>
 				</div>
 				<div class="col-md-6 account-left">
-					<form   action="SellShoes/usercontroller/login" method="post">
+					<form action="SellShoes/usercontroller/login" method="post">
 					<div class="account-top heading">
 						<h3>LOGIN</h3>
 					</div>

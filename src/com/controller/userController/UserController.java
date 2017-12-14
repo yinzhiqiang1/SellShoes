@@ -26,15 +26,17 @@ import com.service.userService.loginServiceImpl;
 public class UserController {
 	@Resource
 	private registerServiceImpl registerServiceImpl;
-	@RequestMapping(value="/comper",method=RequestMethod.POST)
+	
 	//这是关于注册的Controller部分
 
 	
 	// 1 关于头像上传的代码 
+	@RequestMapping(value="/register",method=RequestMethod.POST)
 	public String register (@RequestParam("username") String username,
-			@RequestParam("password") String password ,
+			@RequestParam("psw") String password ,
 			@RequestParam("email") String email, User User,@RequestParam("file") CommonsMultipartFile file)
 					throws IOException {
+		System.out.println("11111");
 		long  startTime=System.currentTimeMillis();
 		   System.out.println("fileName："+file.getOriginalFilename());
 		   String path="E:/"+new Date().getTime()+file.getOriginalFilename();
@@ -43,7 +45,7 @@ public class UserController {
 	        file.transferTo(newFile);
 	        long  endTime=System.currentTimeMillis();
 			User.setPassword(password);
-			User.setEmial(email);
+			User.setEmail(email);
 
 			User.setName(username);
 			User.setPicture(path);

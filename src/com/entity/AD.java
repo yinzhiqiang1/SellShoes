@@ -11,16 +11,13 @@ import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name="User")
+@Table(name="ad")
 @DynamicInsert(true)
 @DynamicUpdate(true)
-public class User {
+public class AD {
 	private int id;
 	private String name;
-	private String email;
 	private String password;
-	private String picture;
-	
 	
 	@Id
 	@GeneratedValue(generator="id")
@@ -38,13 +35,6 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	@Column(name="email")
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
 	@Column(name="password")
 	public String getPassword() {
 		return password;
@@ -52,12 +42,6 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	@Column(name="picture")
-	public String getPicture() {
-		return picture;
-	}
-	public void setPicture(String picture) {
-		this.picture = picture;
-	}
 	
 }
+

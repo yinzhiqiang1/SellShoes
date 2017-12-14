@@ -11,20 +11,19 @@ import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name="User")
+@Table(name="product")
 @DynamicInsert(true)
 @DynamicUpdate(true)
-public class User {
+public class Product{
 	private int id;
 	private String name;
-	private String email;
-	private String password;
-	private String picture;
-	
-	
+	private int price;
+	private int size;
+	private int number;
+	private int typeid;
 	@Id
 	@GeneratedValue(generator="id")
-	@GenericGenerator(name="id",strategy="native")
+	@GenericGenerator(name="id" ,strategy = "native")
 	public int getId() {
 		return id;
 	}
@@ -38,26 +37,34 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	@Column(name="email")
-	public String getEmail() {
-		return email;
+	@Column(name="price")
+	public int getPrice() {
+		return price;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setPrice(int price) {
+		this.price = price;
 	}
-	@Column(name="password")
-	public String getPassword() {
-		return password;
+	@Column(name="size")
+	public int getSize() {
+		return size;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setSize(int size) {
+		this.size = size;
 	}
-	@Column(name="picture")
-	public String getPicture() {
-		return picture;
+	@Column(name="number")
+	public int getNumber() {
+		return number;
 	}
-	public void setPicture(String picture) {
-		this.picture = picture;
+	public void setNumber(int number) {
+		this.number = number;
 	}
+	@Column(name="typeid")
+	public int getTypeid() {
+		return typeid;
+	}
+	public void setTypeid(int typeid) {
+		this.typeid = typeid;
+	}
+	
 	
 }
